@@ -47,9 +47,6 @@ function makeTable() {
 	  // Apply DataTable formatting: https://www.datatables.net/
 	  $(document).ready(function() {
 	    table = $('#store_table').DataTable({
-				// Here, I am supplying DataTable with the data to fill the table.
-				// This is more efficient than supplying an already contructed table.
-				// Refer to http://datatables.net/manual/data#Objects for details.
 	      data: data,
 	      columns: colnames.map(function(e) { return {data: e}; }),
 	      "bLengthChange": true, // Disable page size change
