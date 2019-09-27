@@ -1,0 +1,57 @@
+@import "compass/css3";
+
+$backgroundColor: #eee;
+$iconColor: dimgray;
+$iconSize: 32px; // (in pixels)
+$searchWidth: 300px; // (in pixels)
+$searchMaxHeight: 100px; // (in pixels)
+$fontSize: 1.6rem;
+
+.search-icon {
+  font-size: $iconSize;
+  color: $iconColor;
+  background-color: $backgroundColor;
+  border: 0;
+  outline: none;
+}
+.search-toggle {
+  .search-icon {
+    &.icon-close { display: none; }
+  }
+  &.opened {
+    .search-icon {
+      &.icon-search { display: none; }
+      &.icon-close { display: block; }
+    }
+  }
+}
+.search-container {
+  position: relative;
+  @include transition(all .3s);
+  max-height: 0;
+  overflow: hidden;
+  background-color: $backgroundColor;
+  &.opened { max-height: $searchMaxHeight; }
+  input[type="text"] {
+    outline: none;
+    font-size: $fontSize;
+    margin: 18px;
+    width: $searchWidth;
+    background-color: inherit;
+    border: 0;
+  }
+  .search-icon {
+    vertical-align: middle;
+  }
+}
+
+// Demo CSS
+.container {
+  position: relative;
+  margin-top: 50px;
+}
+
+.search-container {
+  position: absolute;
+  left: 15px;
+}

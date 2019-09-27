@@ -1,0 +1,111 @@
+
+{% load static %}
+
+<html>
+    <head>
+        <Title>MUKVANT-GARDE</Title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'data/css/style.css' %}">
+        <link type="text/css" href="{% static 'data/css/style.scss' %}">
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+
+        <link href="{% static 'data/css/style.js' %}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="{% static 'topojson/topojson.min.js' %}"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".search-icon").click(function(){
+                $(".full-width.search").slideToggle();
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <header id="header-1" class="mg-header">
+            <section>
+                <div class="mg-header-outer">
+                    <a class="mg-home" href="/data" style="text-decoration:none">
+                        <span class="mg-logo-icon">
+                        </span>
+                        <span class="mg-logo-text">
+                        </span>
+                    </a>
+                    <nav class="mg-nav">
+                        <div class="x">
+                            <ul>
+                                <li>
+                                    <a class="on" href="/data/bubble/">
+                                        <span>
+                                            인기 맛집 분포도
+                                        </span>
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                    <a class="on" href="/data/bubble">
+                                        <span>
+                                            지역별 인기 맛집
+                                        </span>
+                                    </a>
+                                </li> -->
+                                <!-- <li>
+                                    <a class="on" href="/data/tag-list">
+                                        <span>
+                                            태그별 인기 맛집
+                                        </span>
+                                    </a>
+                                </li> -->
+                                <!-- <li>
+                                    <a class="on" href="/data/month-list">
+                                        <span>
+                                            월별 인기 맛집
+                                        </span>
+                                    </a>
+                                </li> -->
+                                <li>
+                                    <a class="on" href="/data/slidedate/">
+                                        <span>
+                                            맛집 분포 변화
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="on" href="/data/test">
+                                        <span>
+                                            총 맛집 리스트
+                                        </span>
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                    <a class="search-icon" href="#"><i class="fa fa-search" aria-hidden="true"></i></a></i>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="full-width search">
+                    <div class="search-form">
+                        <h2>Search</h2>
+                        <input type="text" name="" class="search" placeholder="What would you like to search for?">
+                    </div>
+                </div>
+            </section>
+        </header>
+        <div class="cont">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

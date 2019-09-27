@@ -1,0 +1,153 @@
+{% extends 'data/base.html' %}
+{% load static %}
+
+{% block content %}
+        <style>
+
+                .display-container {
+                        position: relative;
+                        margin: auto;
+                }
+
+                .homeimg {
+                        padding-top: 2.4%;
+                        display: none;
+                        animation-name: fade;
+                        animation-duration: 1.5s;
+                        }
+
+                @keyframes fade {
+                                from {opacity: .3}
+                                to {opacity: 1}
+                                }
+
+                .btn {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        background-color: rgba(0,0,0,0.8);
+                        font-size: 30px;
+                        font-weight: initial;
+                        color: white;
+                        padding: 10px;
+                        }
+
+                .btn.post {
+                        right: 0;
+                }
+
+                .w3-display-bottommiddle.w3-container.w3-padding-16.w3-white {
+                        font-family: 'Nanum Myeongjo', serif;
+                }
+
+
+                .img-chart {
+                        padding: 100px 40px 100px 40px;
+                        text-align: center;
+                }
+
+                .img-chart-items {
+                        width: 450px;
+                        height: 450px;
+                        display: inline-block;
+                        padding-bottom: 25px;
+                }
+                .img-caption {
+                        width: 450px;
+                        display: inline-block;
+                        text-align: left;
+                }
+
+                .img-subcaption {
+                        width: 450px;
+                        display: inline-block;
+                        text-align: left;
+                }
+
+                .img-subcaption h4 {
+                        font-family: 'Nanum Myeongjo', serif;
+                }
+
+        </style>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="{% static 'topojson/topojson.min.js' %}"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+        <div class="display-container">
+
+                <div class="homeimg fade">
+                        <img src="https://instagram.ficn6-1.fna.fbcdn.net/vp/8c1936c87f25fcf9fefdc62d95566420/5DA2E6AA/t51.2885-15/e35/47582491_268930903785792_4089649292915377557_n.jpg?_nc_ht=instagram.ficn6-1.fna.fbcdn.net" width="100%" height=85%>
+                        <div class="w3-display-bottommiddle w3-container w3-padding-16 w3-white">올해의 맛집 전국 탑 1위</div>
+                </div>
+
+                <div class="homeimg fade">
+                        <img src="http://ldb.phinf.naver.net/20190424_239/1556080453206DEWFB_JPEG/uCI2K1Tsf44Lm-7dXLkSl6lp.JPG.jpg" width="100%" height=85%>
+                        <div class="w3-display-bottommiddle w3-container w3-padding-16 w3-white">올해의 맛집 전국 탑 2위</div>
+                </div>
+
+                <div class="homeimg fade">
+                        <img src="https://instagram.fphx1-2.fna.fbcdn.net/vp/bb40802ea36507751e78aa49ede35d95/5DD9F4CD/t51.2885-15/e35/47581567_344818962916524_8842960477220212683_n.jpg?_nc_ht=instagram.fphx1-2.fna.fbcdn.net" width="100%" height=85%>
+                        <div class="w3-display-bottommiddle w3-container w3-padding-16 w3-white">올해의 맛집 전국 탑 3위</div>
+                </div>
+
+                <a class="btn prev" onclick="clickBtn(-1)">&#10094;</a>
+                <a class="btn post" onclick="clickBtn(1)">&#10095;</a>
+
+        </div>
+
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex)
+
+        function clickBtn(n) {
+                slideIndex += n;
+                showSlides(slideIndex);
+                }
+
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("homeimg")
+          if (n>slides.length) {slideIndex=1}
+          if (n<1) {slideIndex=slides.length}
+          for (i=0; i<slides.length; i++) {
+                slides[i].style.display = "none";
+          }
+          slides[slideIndex-1].style.display = "block";
+        }
+        </script>
+        <script>
+        var slideIndex = 0;
+        iterSlides();
+        function iterSlides() {
+                var slides = document.getElementsByClassName("homeimg")
+                for (var i=0; i<slides.length; i++) {
+                        slides[i].style.display = "none";
+                }
+                slideIndex ++;
+                if (slideIndex>slides.length) {slideIndex=1}
+                slides[slideIndex-1].style.display = "block";
+                setTimeout(iterSlides, 8000);
+        }
+        </script>
+
+        <div class="img-chart">
+                <img class="img-chart-items" src="{% static 'data/instadata/tmp_img/numberone.png' %}" style="text-align: left">
+                <img class="img-chart-items" src="{% static 'data/instadata/tmp_img/distribution.png' %}" style="text-align: center">
+                <img class="img-chart-items" src="{% static 'data/instadata/tmp_img/grape.png' %}" style="text-align: right">
+                <div class="img-caption"><h3><b>지역별 넘버원 맛집</b></h3></div>
+                <div class="img-caption"><h3><b>국내 맛집 분포</b></h3></div>
+                <div class="img-caption"><h3><b>태그별 맛집</b></h3></div>
+                <div class="img-subcaption"><h4>2019년 1월 ~ 5월 기준</h4></div>
+                <div class="img-subcaption"><h4>2019년 1월 ~ 5월 기준</h4></div>
+                <div class="img-subcaption"><h4>2019년 1월 ~ 5월 기준</h4></div>
+
+        </div>
+
+
+        <body>
+        </html>
+
+{% endblock %}

@@ -1,0 +1,598 @@
+html {box-sizing:border-box;}
+
+*, :after, :before {box-sizing:inherit}
+
+ul {
+    list-style: none;
+    width: 100%
+}
+
+blockquote,body,button,figure,form,h1,h2,h3,h4,h5,h6,html,img,input,li,ol,p,select,textarea,ul {padding:0;margin:0;}
+
+*, :after, :before {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    box-sizing:inherit;
+    text-rendering:optimizeLegibility;
+    -webkit-font-kerning:auto;
+    font-kerning:auto}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+}
+
+html {
+    box-sizing:border-box;
+    -webkit-text-size-adjust:100%}
+
+header {
+    display: block;
+}
+
+@media screen and (min-width: 64em) {
+header.mg-header {
+    height: 60px;
+    padding: 0;
+    overflow: hidden;
+}
+}
+
+header.mg-header {
+    width: 100%;
+    line-height: 60px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    overflow: visible;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.mg-header-outer a {
+    display: inline;
+}
+
+.mg-header-outer nav.mg-nav {
+    display: inline;
+}
+
+a.mg-home {
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+a.mg-home span.mg-logo-text {
+    display: inline-block;
+    background: url("../../img/mukvant-garde7.png") no-repeat 0 0;
+    font-family: 'Do Hyeon', sans-serif;
+    color: rgb(0, 0, 0);
+    width: 350px;
+    height: 70px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    /* padding: 20px 0 20px; */
+    vertical-align: middle;
+}
+
+nav.mg-nav {
+    display: inline-block;
+}
+
+@media screen and (min-width: 50em) {
+nav.mg-nav {
+    display: inline-block;
+    -webkit-transform: none;
+    transform: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    left: -170px;
+    width: auto;
+    height: 70px;
+    color: #444;
+    overflow: hidden;
+}
+}
+
+nav.mg-nav a:hover, a:focus, a:active {
+    color: #999;
+    text-decoration: none;
+}
+
+nav.mg-nav a {
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+}
+
+nav.mg-nav a {
+    position: relative;
+    display: inline-block;
+    padding: 16px 0;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    font-size: 32px;
+    line-height: 16px;
+    text-transform: uppercase;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+    color: #000;
+}
+
+nav.mg-nav a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: rgb(164, 164, 164);
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+/* nav.mg-nav a:active::before {
+    background-color: rgb(179, 26, 26);
+} */
+
+nav.mg-nav a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+nav.mg-nav ul li a.search-icon.active::before {
+    background-color: rgba(218, 58, 58, 0.878);
+}
+
+nav.mg-nav a.search-icon:hover::before {
+    transform: scale(0, 0);
+}
+
+section {
+    width: 100%;
+    height: 40%
+}
+
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.full-width.search {
+    position: relative;
+    background: #000;
+    padding: 10px 100px;
+    display: none;
+    height: auto;
+}
+
+.search-form::placeholder {
+    color: #fff;
+}
+
+.search-form {
+    position: relative;
+    padding-left: 20px;
+    margin: auto;
+}
+
+.search {
+    display: inline-block;
+    height: 13%;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* .search-form::before {
+    content: '\f002';
+    position: absolute;
+    color: #fff;
+    font-family: 'Do Hyeon', sans-serif;
+    top: 7px;
+    left: 0; */
+
+.search-form input {
+    width: 100%;
+    height: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    cursor: pointer;
+}
+
+.search-form h2 {
+    color:white;
+}
+
+.page-header1 {
+    color: rgb(0, 0, 0);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3%;
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: right;
+}
+
+.page-header1 a {
+    color: rgb(130, 119, 119);
+    font-size: 24px;
+    vertical-align: 0%;
+}
+
+.page-header2 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 6%;
+    padding-bottom: 0px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.page-header3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 0%;
+    padding-bottom: 0px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.navi {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 24px;
+}
+
+div#states-navi {
+    font-size: 28px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    padding: 2%;
+    width: 100%;
+    position:relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+div#states-navi ul li a span:hover {
+    color: #FF5733;
+    transition: color 0.3s;
+}
+
+
+li a {
+    padding: 10px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+div.cont {
+    padding-top: 5%;
+}
+
+div#chart {
+    padding-left: 0%;
+    padding-bottom: 10%;
+    float: right;
+    width: 85%;
+}
+
+div#categories {
+    width: 200px;
+    height: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 30%;
+  left: 7%;
+  background: #eee;
+  opacity: 0.7;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+div#categories label:hover {
+  color: red;
+}
+
+div#categories label {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+}
+
+svg {
+  display: inline-block;
+  position: absolute;
+  width: 85%;
+  top: 20%;
+}
+
+svg circle {
+    opacity: .5;
+    stroke: white;
+}
+svg circle:hover {
+    fill: red;
+    stroke: #333;
+}
+svg text {
+    pointer-events: all;
+}
+svg .municipality {
+    stroke: #fff;
+}
+svg .municipality-label {
+    fill: #bbb;
+    font-size: 12px;
+    font-weight: 300;
+    text-anchor: middle;
+}
+
+svg #map text {
+    color: #333;
+    font-size: 6px;
+    text-anchor: middle;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+svg #map #municipality-label-korea {
+    font-size: 10px;
+}
+
+svg #places text {
+    color: #777;
+    font: 10px sans-serif;
+    text-anchor: start;
+}
+
+g#map{
+height: 40%;
+}
+
+.image {
+  width: 10%;
+  z-index: 9;
+  position: absolute;
+  top: 45%;
+  left: 30%;
+}
+
+.imageBox {
+  position: fixed;
+  visibility: hidden;
+  padding: 0px;
+  z-index: 10;
+  cursor: grab;
+}
+
+a {
+padding-top: 10px;
+font-family: 'Do Hyeon', sans-serif;
+cursor: pointer;
+text-decoration:none;
+color: inherit;
+font-weight: bold;
+}
+
+p {
+width: 300px;
+padding-top: 10px;
+padding-right: 25px;
+font-weight: 100;
+font-family: 'Do Hyeon', sans-serif;
+cursor: pointer;
+}
+
+img {
+border-radius: 0%;
+border: 1px solid #9e9e9e63;
+object-fit: cover;
+}
+
+.infoBox {
+color: black;
+background-color: white;
+width: 300px;
+height: auto;
+border: 1px solid #9e9e9e63;
+padding-bottom: 10px;
+padding-left: 10px;
+}
+
+div #slidecontainer {
+    width: 100%;
+    padding-left: 8%;
+    position: relative;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+  span#demo {
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: bold;
+    font-size: 1000%;
+    color: #777;
+  }
+
+  .node rect {
+    cursor: pointer;
+    fill: #fff;
+    fill-opacity: .5;
+    stroke: #3182bd;
+    stroke-width: 1.5px;
+  }
+
+  .node text {
+    font: 10px sans-serif;
+    pointer-events: none;
+  }
+
+  path.link {
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1.5px;
+  }
+
+  rect {
+    x: 10;
+    y: 10;
+    width: 80;
+    height: 80;
+    fill: 'red';
+  }
+
+
+
+  table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border-top: 1px solid #ddd;
+    width: 200;
+  }
+
+  .image {
+    width: 10%;
+    z-index: 9;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+  }
+
+  .imageBox {
+    position: fixed;
+    visibility: hidden;
+    padding: 0px;
+    z-index: 10;
+    cursor: grab;
+    height: auto;
+  }
+
+  .imageBox a {
+  padding-top: 5px;
+  font-family: 'Nanum Gothic', sans-serif;
+  cursor: pointer;
+  text-decoration:none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  }
+
+  @media screen and (min-width: 50em) {
+      .imageBox a {
+          padding-top: 10px;
+          font-family: 'Nanum Gothic', sans-serif;
+          cursor: pointer;
+          text-decoration:none;
+          color: inherit;
+          font-weight: bold;
+          font-size: 18px;
+          }
+  }
+
+  p {
+  padding-top: 10px;
+  padding-right: 10px;
+  font-weight: 100;
+  font-family: 'Nanum Gothic', sans-serif;
+  cursor: pointer;
+  }
+
+  .imageBox img {
+      height: 150;
+      width: 150;
+      }
+
+  @media screen and (min-width: 50em) {
+  .imageBox img {
+  height: 300;
+  width: 300;
+  }
+  }
+
+  img {
+  border-radius: 0%;
+  border: 1px solid #9e9e9e63;
+  object-fit: cover;
+  }
+
+  .infoBox {
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: auto;
+  border: 1px solid #9e9e9e63;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  }
+
+  @media screen and (min-width: 50em) {
+      .infoBox {
+          color: black;
+                        background-color: white;
+                        width: 300px;
+                        height: auto;
+                        border: 1px solid #9e9e9e63;
+                        padding-bottom: 10px;
+                        padding-left: 10px;
+                        }
+                }
+
+div #container {
+    position: relative;
+    top: 50;
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 20;
+}

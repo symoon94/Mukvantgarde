@@ -1,0 +1,121 @@
+{% load static %}
+
+<html>
+
+    <head>
+        <Title>MUKVANT-GARDE</Title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="{% static 'topojson/topojson.min.js' %}"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <link rel="stylesheet" href="{% static 'data/css/style_dist.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header id="header-1" class="mg-header">
+            <section>
+                <div class="mg-header-outer">
+                    <a class="mg-home" href="/data" style="text-decoration:none">
+                        <span class="mg-logo-icon"></span>
+                        <span class="mg-logo-text"></span>
+                    </a>
+                    <nav class="mg-nav">
+                        <div class="x">
+                            <ul>
+                                <li>
+                                    <a class="on" id="current" href="/data/bubble/">
+                                        <span>
+                                            인기 맛집 분포도
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="on" href="/data/slidedate/">
+                                        <span>
+                                            맛집 분포 변화
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="on" href="/data/test">
+                                        <span>
+                                            총 맛집 리스트
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="full-width search">
+                    <div class="search-form">
+                        <h2>Search</h2>
+                        <input type="text" name="" class="search" placeholder="What would you like to search for?">
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="{% static 'topojson/topojson.min.js' %}"></script>
+
+        <div id="states-navi"></div>
+        <div class="cont" width = "100%"; height = "400px">
+            <div id="chart"></div>
+            <div id="categories" align-items= "stretch" >
+                <label><input type="checkbox" class="checkbox" id="checkUncheckAll" name="checkbox" onclick="CheckUncheckAll()" value="all" text="ALL" checked> ALL</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="카페" checked> 카페</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="술집" checked> 술집</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="한식" checked> 한식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="분식" checked> 분식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="중식" checked> 중식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="일식" checked> 일식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="양식" checked> 양식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="브런치" checked> 브런치</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="아시아음식" checked> 아시아음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="태국음식" checked> 태국음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="베트남음식" checked> 베트남음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="인도음식" checked> 인도음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="스페인음식" checked> 스페인음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="그리스" checked> 그리스 / 터키 음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="프랑스음식" checked> 프랑스음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="이탈리아음식" checked> 이탈리아음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="멕시코" checked> 남미음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="퓨전음식" checked> 퓨전음식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="해물" checked> 해물</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="치킨" checked> 치킨</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="스테이크" checked> 스테이크</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="두부요리" checked> 두부요리</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="피자" checked> 피자</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="햄버거" checked> 햄버거</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="핫도그" checked> 핫도그</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="야식" checked> 야식</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="뷔페" checked> 뷔페</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="푸드코트" checked> 푸드코트</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="패밀리레스토랑" checked> 패밀리레스토랑</label>
+                <label><input type="checkbox" class="checkbox" name="checkbox" value="특급호텔레스토랑" checked> 특급호텔레스토랑</label>
+            </div>
+        </div>
+
+        <div class="image" id="Image">
+            <div class="imageBox" id="Style">
+                <img src="" padding="10%" />
+                <div class="infoBox">
+                    <p><a href=""></a></p>
+                    <p><a href=""></a></p>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'data/main_dist.js' %}"></script>
+
+        {% block content %}
+            <script src="{% static 'data/draw1.js' %}"></script>
+        {% endblock %}
+
+        <script src="{% static 'data/distribution_flag_navi.js' %}"></script>
+
+    </body>
