@@ -10,7 +10,7 @@ var path = d3.geo.path().projection(projection);
 
 
 
-d3.json("{% static 'topojson/skorea-provinces-2018-topo-simple.json' %}", function(error, data) {
+d3.json("/../../../static/topojson/skorea-provinces-2018-topo-simple.json", function(error, data) {
     var features = topojson.feature(data, data.objects.skorea_provinces_2018_geo).features;
 
     map.selectAll("path")
@@ -30,7 +30,7 @@ d3.json("{% static 'topojson/skorea-provinces-2018-topo-simple.json' %}", functi
         .style("font-size", "5px")
 });
 
-d3.csv("{% static 'data/instadata/total/concated_output.csv' %}", function(data) {
+d3.csv("/../../../static/data/instadata/total/concated_output.csv", function(data) {
     console.log(data);
 
     places.selectAll("circle")
