@@ -113,6 +113,9 @@
         <script src="{% static 'data/main_dist.js' %}"></script>
 
         {% block content %}
+            <script>
+                var topourl = "{% static '/topojson/skorea-provinces-2018-topo-simple.json' %}"
+            </script>
             <script src="{% static 'data/draw1.js' %}"></script>
         {% endblock %}
 
