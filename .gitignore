@@ -229,3 +229,6 @@ local_settings.py
 
 *.csv
 *.json
+
+
+!*/skorea-provinces-2018-topo-simple.json
