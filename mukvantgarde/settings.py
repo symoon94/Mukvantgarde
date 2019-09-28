@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vbrckenv@t9$t4sez_fd3fm$#t40h^^tm7vvxp==jpql(k3*o&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ '127.0.0.1', '.herokuapp.com' ] #'127.0.0.1', '.herokuapp.com'
 
@@ -60,28 +60,28 @@ TEMPLATES = [
 ]
 
 
-# ## local host에서 사용시
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-# heroku 사용시
+## local host에서 사용시
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'munsuyeong',
-        'USER': 'symoon94',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-# heroku 사용시
-WSGI_APPLICATION = 'mukvantgarde.wsgi.application'
+# # heroku 사용시
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'munsuyeong',
+#         'USER': 'symoon94',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
+# # heroku 사용시
+# WSGI_APPLICATION = 'mukvantgarde.wsgi.application'
 
 
 # Password validation

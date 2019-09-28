@@ -227,6 +227,7 @@ Temporary Items
 
 local_settings.py
 
-
-
 !*/skorea-provinces-2018-topo-simple.json
+
+*.csv
+*.json

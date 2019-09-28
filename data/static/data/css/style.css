@@ -43,7 +43,7 @@ header.mg-header {
 
 header.mg-header {
     width: 100%;
-    line-height: 60px;
+    /* line-height: 60px; */
     position: relative;
     top: 0;
     left: 0;
