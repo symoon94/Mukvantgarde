@@ -75,7 +75,10 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            var topourl = "{% static 'topojson/skorea-provinces-2018-topo-simple.json' %}"
+            var dataurl = "{% static 'data/instadata/total/stamp2json_yrmo_title.csv' %}"
+        </script>
         <script src="{% static 'data/main_dist.js' %}"></script>
 
         {% block content %}

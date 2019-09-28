@@ -34,8 +34,8 @@ var projection = d3.geo.mercator()
 var path = d3.geo.path().projection(projection);
 
 d3.queue()
-    .defer(d3.json, "/static/topojson/skorea-provinces-2018-topo-simple.json")
-    .defer(d3.csv, "/static/data/instadata/total/stamp2json_yrmo_title.csv")
+    .defer(d3.json, topourl)
+    .defer(d3.csv, dataurl)
     .awaitAll(render_map);
 
 
